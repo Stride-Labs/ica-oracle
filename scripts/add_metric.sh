@@ -30,8 +30,8 @@ msg=$(cat << EOF
 EOF
 )
 
-echo ">>> osmosisd tx wasm execute $contract_address $msg"
-tx_hash=$($OSMOSISD tx wasm execute $contract_address "$msg" --from oval1 -y $GAS | grep -E "txhash:" | awk '{print $2}')
+echo ">>> strided tx wasm execute $contract_address $msg"
+tx_hash=$($STRIDED tx wasm execute $contract_address "$msg" --from val1 -y $GAS | grep -E "txhash:" | awk '{print $2}')
 
 echo "Tx Hash: $tx_hash"
 echo $tx_hash > $METADATA/store_tx_hash.txt
