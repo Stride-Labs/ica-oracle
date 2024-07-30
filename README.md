@@ -3,6 +3,13 @@
 ## Overview
 The `icaoracle` facilities trustless data publication to cosmwasm outposts on adjacent chains. The full ICA Oracle solution consists of two components: the `icaoracle` module deployed on the source chain, as well as a corresponding cosmwasm oracle contract deployed on the destination chain (described here). The contract features a standard key-value store, that accepts push messages from this module via interchain accounts. The data sent is referred to as a `Metric`. For Stride, the primary application of this module is to enable integrations to trustlessly retrieve the redemption rate (internal exchange rate) of stTokens.
 
+## Mainnet Deployments
+| Chain     | Code ID | Contract Address                                                   |
+|-----------|---------|--------------------------------------------------------------------|
+| Osmosis   | 151     | osmo1df5d9wr6s3xp49qe3sgzyd6gwr4yxwl2ydey08rgac5u02wqnvyq0pd5m9    |
+| Neutron   | 744     | neutron1mvjgd3pwvdn9c9feppejjlen65p492l2ka0uaenrzrtdqkc692tsnzsj9w |
+| Injective | 737     | inj1n55xxawhaq4mn9pmgqvhxcukcel2emgc5gx39t                         |
+
 ## Pushing Metrics
 This contract consists of a single transaction `PostMetric` that is responsible for publishing data to the oracle. Only the admin can push metrics to the oracle. The source chain controlled interchain account controlled is the contract admin. 
 
